@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HungerWithPankaj</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav-bar">
+            <a href="#menu" class="logo">Tandoor-e-Yadav</a>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#orders">Your Orders</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" id="login-logout-button">Login</a></li>
+                <li><a href="#" id="cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Tandoor-e-Yadav</h1>
+                <p class="hero-subtitle">Delicious food, delivered right to your door. Fresh ingredients, cooked with passion.</p>
+                
+                <form id="search-form" class="search-form">
+                    <input type="search" id="search-input" placeholder="Search  your favorite food...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                
+                <a href="#menu" class="hero-cta-button">Order Now</a>
+            </div>
+        </section>
+       
+        <section id="menu" class="section">
+             <h2 class="section-title">Our <span>Menu</span></h2>
+            <div class="main-content">
+                <div class="box" data-id="pizza" data-name="Pizza" data-price="300" data-image="pizza.jpg">
+                    <div class="box-image" style="background-image: url('pizza.jpg');"></div>
+                    <div class="box-content">
+                        <h2>PIZZA</h2>
+                        <p>RS 300</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="burger" data-name="Burger" data-price="100" data-image="burger.jpg">
+                    <div class="box-image" style="background-image: url('burger.jpg');"></div>
+                    <div class="box-content">
+                        <h2>BURGER</h2>
+                        <p>RS 100</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="momos" data-name="momos" data-price="90" data-image="momos.jpg">
+                    <div class="box-image" style="background-image: url('nuddles.jpg');"></div>
+                    <div class="box-content">
+                        <h2>Momos</h2>
+                        <p>RS 90</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" data-id="paneer" data-name="Shahi Paneer" data-price="250" data-image="Shahi-Paneer-1.jpg">
+                    <div class="box-image" style="background-image: url('Shahi-Paneer-1.jpg');"></div>
+                    <div class="box-content">
+                        <h2>Shahi Paneer</h2>
+                        <p>RS 250</p>
+                        <div class="buttons">
+                           <button class="add-to-cart-btn">Add To Cart</button>
+                           <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" data-id="nan" data-name="Butter Naan" data-price="70" data-image="butter nan.webp">
+                    <div class="box-image" style="background-image: url('butter nan.webp');"></div>
+                    <div class="box-content">
+                        <h2>Butter Naan</h2>
+                        <p>RS 70</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" data-id="paneer teeka" data-name="paneer-teeka" data-price="170" data-image="paneer-tikka.jpg">
+                    <div class="box-image" style="background-image: url('paneer-tikka.jpg');"></div>
+                    <div class="box-content">
+                        <h2>Paneer Teeka</h2>
+                        <p>RS 170</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" data-id="chowmin" data-name="Chowmin" data-price="80" data-image="chowmin.webp">
+                    <div class="box-image" style="background-image: url('chowmin.webp');"></div>
+                    <div class="box-content">
+                        <h2>Chowmien</h2>
+                        <p>RS 80</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="noodles" data-name="Noodles" data-price="200" data-image="nuddles.jpg">
+                    <div class="box-image" style="background-image: url('nuddles.jpg');"></div>
+                    <div class="box-content">
+                        <h2>NOODLES</h2>
+                        <p>RS 200</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" data-id="fries" data-name="French Fries" data-price="150" data-image="french frai.jpg">
+                    <div class="box-image" style="background-image: url('french frai.jpg');"></div>
+                    <div class="box-content">
+                        <h2>French Fries</h2>
+                        <p>RS 150</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" data-id="Cake" data-name="Cake" data-price="450" data-image="cake.jpg">
+                    <div class="box-image" style="background-image: url('cake.jpg');"></div>
+                    <div class="box-content">
+                        <h2>Cake</h2>
+                        <p>RS 450</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="scotch" data-name="Butter Scotch" data-price="150" data-image="butter scotch.webp">
+                    <div class="box-image" style="background-image: url('butter scotch.webp');"></div>
+                    <div class="box-content">
+                        <h2>Butter Scotch</h2>
+                        <p>RS 150</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" data-id="Strawberry Milkshake" data-name="BStrawberry Milkshake" data-price="100" data-image="Strawberry\ Milkshake\ 1.jpg">
+                    <div class="box-image" style="background-image: url('Strawberry\ Milkshake\ 1.jpg');"></div>
+                    <div class="box-content">
+                        <h2>Strawberry Milkshake</h2>
+                        <p>RS 100</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="drink" data-name="Colddrink" data-price="50" data-image="coldrink.jpg">
+                    <div class="box-image" style="background-image: url('coldrink.jpg');"></div>
+                    <div class="box-content">
+                        <h2>Colddrink</h2>
+                        <p>RS 50</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" data-id="Classic mojito" data-name="Classic mojito" data-price="70" data-image="Classic\ Mojito.jpg">
+                    <div class="box-image" style="background-image: url('Classic\ Mojito.jpg');"></div>
+                    <div class="box-content">
+                        <h2>Classic mojito</h2>
+                        <p>RS 70</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="Watermelon Cooler" data-name="Watermelon Cooler" data-price="150" data-image="Watermelon\ Cooler.jpg">
+                    <div class="box-image" style="background-image: url('Watermelon\ Cooler.jpg');"></div>
+                    <div class="box-content">
+                        <h2>Watermelon Cooler</h2>
+                        <p>RS 150</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="butter chicken" data-name="butter chicken" data-price="300" data-image="Butter\ Chicken.avif">
+                    <div class="box-image" style="background-image: url('Butter\ Chicken.avif');"></div>
+                    <div class="box-content">
+                        <h2>Butter Chicken</h2>
+                        <p>RS 300</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="Biryani" data-name="Biryani" data-price="110" data-image="biryani.avif">
+                    <div class="box-image" style="background-image: url('biryani.avif');"></div>
+                    <div class="box-content">
+                        <h2>Biryani</h2>
+                        <p>RS 110</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="Chai" data-name="Chai" data-price="40" data-image="chai.avif">
+                    <div class="box-image" style="background-image: url('chai.avif');"></div>
+                    <div class="box-content">
+                        <h2>Chai</h2>
+                        <p>RS 40</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="Gulab Jamun" data-name="Gulab Jamun" data-price="30" data-image="gulabjamun.webp">
+                    <div class="box-image" style="background-image: url('gulabjamun.webp');"></div>
+                    <div class="box-content">
+                        <h2>Gulab Jamun</h2>
+                        <p>RS 30</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="box" data-id="Samosa" data-name="Samosa" data-price="50" data-image="samosa.jpg">
+                    <div class="box-image" style="background-image: url('samosa.jpg');"></div>
+                    <div class="box-content">
+                        <h2>Samosa</h2>
+                        <p>RS 50</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" data-id="Kaju Katali" data-name="Kaju Katali" data-price="100" data-image="kaju\ katali.avif">
+                    <div class="box-image" style="background-image: url('kaju\ katali.avif');"></div>
+                    <div class="box-content">
+                        <h2>Kaju Katali</h2>
+                        <p>RS 100</p>
+                        <div class="buttons">
+                            <button class="add-to-cart-btn">Add To Cart</button>
+                            <button class="buy-now-btn">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2 class="section-title">Our Story: <span>Flavor & Passion</span></h2>
+            <div class="about-section-container">
+                <div class="about-image"><img src="kitchen image.avif" alt="Our Kitchen"></div>
+                <div class="about-content">
+                    <h3>From Our Kitchen to Your Door</h3>
+                    <p>Welcome to The Tandoor-e-Yadav ! Our journey started with a simple passion: creating food that makes people happy. We believe that a great meal isn't just about the ingredients; it's about the care, the tradition, and the joy it brings.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="orders" class="section">
+            <h2 class="section-title">Your <span>Orders</span></h2>
+            <div id="orders-container"></div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">Contact <span>& Location</span></h2>
+            <div class="contact-links">
+              <a href="mailto:py6914810@gmail.com" class="contact-link-item"><i class="fas fa-envelope"></i><span>py6914810@gmail.com</span></a>
+              <a href="tel:+917739591852" class="contact-link-item"><i class="fas fa-phone"></i><span>+91 7739591852</span></a>
+              
+        <a href="https://www.linkedin.com/in/pankaj-kumar-yadav-926591376" target="_blank" class="contact-link-item"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+         <a href="https://github.com/pankajyadav108cyber" target="_blank" class="contact-link-item"><i class="fab fa-github"></i><span>GitHub</span></a>
+        <a href="https://www.instagram.com/pankajyadav__18/" target="_blank" class="contact-link-item"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Pankaj Yadav. All Rights Reserved.</p>
+    </footer>
+
+    <button id="scrollTopBtn" title="Go to top">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="currentColor"><path d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1-1.414 1.414L13 6.414V20a1 1 0 1 1-2 0V6.414L6.707 10.707a1 1 0 0 1-1.414-1.414l6-6z"/></svg>
+    </button>
+    
+    <div id="cart-modal-backdrop" class="modal-backdrop hidden">
+        <div class="modal cart-modal">
+            <div class="modal-header">
+                <h3>Your Shopping Cart</h3>
+                <button id="close-cart-button" class="modal-close-button">×</button>
+            </div>
+            <div class="modal-body" id="cart-items"></div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>Total</span>
+                    <span id="cart-total">RS 0</span>
+                </div>
+                <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal-backdrop" class="modal-backdrop hidden">
+        <div class="modal checkout-modal">
+            <div class="modal-header">
+                <h3>Checkout</h3>
+                <button id="close-checkout-button" class="modal-close-button">×</button>
+            </div>
+            <div class="modal-body">
+                <h4>Order Summary</h4>
+                <div id="checkout-summary"></div>
+                <hr>
+                <h4>Shipping Details</h4>
+                <form id="checkout-form" class="checkout-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pinCode">Pin Code</label>
+                        <input type="text" id="pinCode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-order-btn" class="checkout-btn">Confirm Order</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="custom-alert" class="hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
