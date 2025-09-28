@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at FoodOrder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D1B2A;
+            color: #FAFAFA;
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        .main-header {
+            background-color: #0D1B2A;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f59e0b;
+            text-decoration: none;
+        }
+        .nav-link {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #f59e0b;
+        }
+        .nav-button {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #f59e0b;
+        }
+        .hero {
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            background-size: cover;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.125rem;
+            color: #e5e7eb;
+            max-width: 48rem;
+            margin: 0 auto 2rem auto;
+        }
+        .hero-button {
+            background-color: white;
+            color: black;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+        .hero-button:hover {
+            background-color: #f3f4f6;
+            transform: scale(1.05);
+        }
+        .main-content {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        .section {
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f59e0b;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .section-subtitle {
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+            color: #FAFAFA;
+        }
+        .perks-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        .perk-card {
+            background-color: #234C6A;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: box-shadow 0.3s ease;
+        }
+        .perk-card p{
+            color: white;
+        }
+        .perk-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .perk-icon {
+            color: #ef4444;
+            margin-bottom: 1rem;
+        }
+        .perk-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #f59e0b;
+        }
+        .job-listings-container {
+            max-width: 56rem;
+            margin: 0 auto;
+            display: grid;
+            gap: 1.5rem;
+        }
+        .job-card {
+            background-color: #234C6A;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+        .job-card:hover {
+            transform: translateY(-4px);
+        }
+        .job-card-info h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #f59e0b;
+        }
+        .job-card-info p {
+            color: white;
+        }
+        .apply-button {
+            background-color: #FAFAFA;
+            color: black;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.2s ease;
+        }
+        .apply-button:hover {
+            background-color: #f59e0b;
+        }
+        .apply-section {
+            background-color: #234C6A;
+            border-radius: 0 0 0.5rem 0.5rem;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            text-align: center;
+        }
+        .apply-section h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .apply-section p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .apply-section a {
+            font-weight: 600;
+            color: #f59e0b;
+            text-decoration: none;
+        }
+        .apply-section a:hover {
+            text-decoration: underline;
+        }
+        .main-footer {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+        .main-footer .text-muted {
+            color: #9ca3af;
+            margin-top: 0.5rem;
+        }
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 3.75rem; }
+            .perks-grid { grid-template-columns: repeat(2, 1fr); }
+            .job-card { flex-direction: row; }
+            .apply-button { margin-top: 0; }
+        }
+        @media (min-width: 1024px) {
+            .perks-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="container main-nav">
+            <a href="#" class="logo">Tandoor-e-Yadav</a>
+            <div>
+                <a href="#openings" class="nav-link">Open Positions</a>
+                <a href="#contact" class="nav-button">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Shape the Future of Food Delivery</h1>
+            <p>Join a passionate team dedicated to connecting people with their favorite meals, one order at a time.</p>
+            <a href="#openings" class="hero-button">View Open Roles</a>
+        </div>
+    </section>
+
+    <main class="container main-content">
+        <section class="section">
+            <h2 class="section-title">Our Mission</h2>
+            <p class="section-subtitle">
+                At <strong>FoodOrder</strong>, we believe great food brings people together. Our mission is to make ordering food fast, reliable, and enjoyable. We're building a platform that not only delivers meals but also creates moments of happiness and connection for our customers.
+            </p>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Why You'll Love Working With Us</h2>
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <div class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg></div>
+                    <h3>Growth Opportunities</h3>
+                    <p>We invest in your professional development with training, mentorship, and clear career paths.</p>
+                </div>
+                <div class="perk-card">
+                     <div class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21a6 6 0 00-9-5.197M15 11a4 4 0 110-5.292" /></svg></div>
+                    <h3>Supportive Team</h3>
+                    <p>Work in a collaborative and friendly environment where every voice is heard and valued.</p>
+                </div>
+                <div class="perk-card">
+                     <div class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                    <h3>Work-Life Balance</h3>
+                    <p>We offer flexible working hours and remote options to help you maintain a healthy balance.</p>
+                </div>
+                <div class="perk-card">
+                     <div class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.707 4.293l1.414 1.414M1.414 1.414l1.414 1.414M16.293 4.293l-1.414 1.414M22.586 1.414l-1.414 1.414M12 21v2M12 3V1m4 18v2M8 21v2" /></svg></div>
+                    <h3>Make an Impact</h3>
+                    <p>Be part of a company that's revolutionizing how people enjoy their favorite meals.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="openings" class="section">
+            <h2 class="section-title">Current Openings</h2>
+            <div class="job-listings-container">
+                <div class="job-card">
+                    <div class="job-card-info">
+                        <h3>Delivery Executive</h3>
+                        <p>Patna, Bihar &bull; Full-time</p>
+                    </div>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+                <div class="job-card">
+                    <div class="job-card-info">
+                        <h3>Customer Support Associate</h3>
+                        <p>Remote &bull; Full-time</p>
+                    </div>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+                <div class="job-card">
+                    <div class="job-card-info">
+                        <h3>Senior Backend Developer (Go)</h3>
+                        <p>Remote &bull; Full-time</p>
+                    </div>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+                 <div class="job-card">
+                    <div class="job-card-info">
+                        <h3>Marketing & Sales Executive</h3>
+                        <p>Patna, Bihar &bull; Full-time</p>
+                    </div>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="apply-section">
+            <h2>Ready to Join Us?</h2>
+            <p>
+                We're excited to hear from you! Send your resume and a brief cover letter telling us why you'd be a great fit for the FoodOrder family.
+            </p>
+            <p>
+                📧 Email us at: 
+                <a href="mailto:careers@foodorder.com">
+                  py6914810@gmail.com
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Pankaj Yadav, Inc. All Rights Reserved.</p>
+            <p class="text-muted">Let's grow together and make food ordering smarter and happier!</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+

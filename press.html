@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press Section - FoodOrder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* * CSS FOR THE PRESS FOOTER SECTION
+         * This styling creates a modern, card-based layout that is fully responsive.
+         */
+
+        /* Basic body styling for demonstration */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #f9fafb; /* A light background to make the footer stand out */
+            color: #4b5563;
+        }
+
+        /* Footer container */
+        .press-footer {
+            background-color: #ffffff;
+            border-top: 1px solid #e5e7eb;
+            padding: 50px 20px;
+            width: 100%;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        .press-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Main title and introductory paragraph */
+        .press-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .press-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            line-height: 1.6;
+        }
+
+        /* Grid layout for the content cards */
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        /* Styling for individual cards */
+        .press-card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .press-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .press-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        /* SVG icon styling */
+        .press-card h3 svg {
+            margin-right: 0.75rem;
+            width: 24px;
+            height: 24px;
+            color: #e63946;
+        }
+
+        /* Media highlights list */
+        .media-highlights {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .media-highlights li {
+            margin-bottom: 1.5rem; /* Increased margin for better spacing */
+            display: flex;
+            align-items: center; /* Vertically center logo with text */
+            gap: 1rem;
+        }
+        
+        .media-highlights li:last-child {
+            margin-bottom: 0;
+        }
+
+        .media-logo {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background-color: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #374151;
+        }
+
+        .media-content p {
+            margin: 0 0 0.25rem 0;
+            line-height: 1.5;
+        }
+
+        .read-more-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #e63946;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .read-more-link:hover {
+            text-decoration: underline;
+            color: #d62839;
+        }
+
+        /* Press kit and contact link styling */
+        .press-link {
+            display: inline-block;
+            background-color: #e63946;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .press-link:hover {
+            background-color: #d62839;
+        }
+
+        .contact-info a {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info p {
+            margin: 0 0 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info p svg {
+             margin-right: 0.5rem;
+             width: 20px;
+             height: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Press Section in Footer -->
+    <footer class="press-footer">
+        <div class="press-container">
+            <!-- Header Section -->
+            <div class="press-header">
+                <h2>Press at FoodOrder</h2>
+                <p>
+                    At <strong>FoodOrder</strong>, we’re more than just a food delivery platform – we’re building the future of online food experiences. Our journey has been featured by leading media outlets, and we love sharing our story.
+                </p>
+            </div>
+
+            <!-- Grid for content cards -->
+            <div class="press-grid">
+                <!-- Card 1: Media Highlights -->
+                <div class="press-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" /></svg>
+                        Media Highlights
+                    </h3>
+                    <ul class="media-highlights">
+                        <li>
+                            <div class="media-logo">FT</div>
+                            <div class="media-content">
+                                <p>Featured in <strong>FoodTech Today</strong> as one of the fastest-growing food platforms.</p>
+                                <a href="#" class="read-more-link">Read Article &rarr;</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="media-logo">ST</div>
+                            <div class="media-content">
+                                <p>Interviewed by <strong>Startup Times</strong> for our innovation in food delivery.</p>
+                                <a href="#" class="read-more-link">Read Interview &rarr;</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="media-logo">LN</div>
+                            <div class="media-content">
+                                <p>Covered by <strong>Local News</strong> for supporting small restaurants.</p>
+                                <a href="#" class="read-more-link">Watch Segment &rarr;</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Press Resources -->
+                <div class="press-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                        Press Resources
+                    </h3>
+                    <p>
+                        We provide high-quality media assets, brand guidelines, and official press releases for journalists and media partners.
+                    </p>
+                    <a href="https://www.foodorder.com/press-kit" target="_blank" class="press-link">
+                        Download Press Kit
+                    </a>
+                </div>
+
+                <!-- Card 3: Contact -->
+                <div class="press-card contact-info">
+                     <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>
+                        Contact Our Team
+                    </h3>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                        <a href="mailto:press@foodorder.com">press@foodorder.com</a>
+                    </p>
+                     <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+                        <span>+91-98765-43210</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
