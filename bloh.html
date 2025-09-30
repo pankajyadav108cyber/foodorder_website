@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The FoodDash Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* bg-gray-50 */
+        }
+
+        /* --- HEADER STYLES --- */
+        .main-header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .header-nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-logo {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            display: flex;
+            align-items: center;
+            color: #111827; /* text-gray-900 */
+            text-decoration: none;
+        }
+        .header-logo .fa-utensils {
+            margin-right: 0.75rem; /* mr-3 */
+            color: #f97316; /* text-orange-500 */
+        }
+        .header-link {
+            font-weight: 500; /* font-medium */
+            color: #4b5563; /* text-gray-600 */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .header-link:hover {
+            color: #f97316; /* hover:text-orange-500 */
+        }
+        
+        /* --- BLOG PAGE STYLES --- */
+        .blog-container {
+            max-width: 900px;
+            margin: 2.5rem auto; /* my-10 */
+            padding: 0 1.5rem;
+        }
+
+        .blog-header h1 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700;
+            color: #111827;
+            text-align: center;
+        }
+        .blog-header p {
+            font-size: 1.125rem; /* text-lg */
+            color: #6b7280; /* text-gray-500 */
+            text-align: center;
+            margin-top: 0.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blog-posts-grid {
+            margin-top: 3rem; /* mt-12 */
+            display: grid;
+            gap: 2.5rem; /* gap-10 */
+        }
+
+        .blog-post-card {
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .blog-post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+        }
+
+        .blog-post-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .blog-post-content {
+            padding: 1.5rem; /* p-6 */
+        }
+
+        .post-meta {
+            font-size: 0.875rem; /* text-sm */
+            color: #4b5563; /* text-gray-600 */
+            margin-bottom: 0.5rem;
+        }
+        .post-meta .author {
+            font-weight: 600; /* font-semibold */
+            color: #f97316;
+        }
+
+        .post-title {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #1f2937; /* text-gray-800 */
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+
+        .post-excerpt {
+            color: #4b5563; /* text-gray-600 */
+            line-height: 1.6;
+            margin-bottom: 1.25rem; /* mb-5 */
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            font-weight: 600; /* font-semibold */
+            color: #f97316;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .read-more-btn:hover {
+            color: #ea580c; /* hover:text-orange-600 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Simple Header for Navigation -->
+    <header class="main-header">
+        <nav class="header-nav">
+            <a href="/" class="header-logo">
+                <i class="fas fa-utensils"></i> FoodDash
+            </a>
+            <a href="#" class="header-link">Back to Main Site</a>
+        </nav>
+    </header>
+
+    <main class="blog-container">
+        
+        <header class="blog-header">
+            <h1>The FoodDash Blog</h1>
+            <p>Your daily serving of food stories, restaurant spotlights, and culinary adventures from the heart of Patna.</p>
+        </header>
+
+        <div class="blog-posts-grid">
+
+            <!-- Blog Post 1 -->
+            <article class="blog-post-card">
+                <img src="https://placehold.co/900x500/f97316/white?text=Delicious+Pizza" alt="A delicious pizza on a wooden board" class="blog-post-image">
+                <div class="blog-post-content">
+                    <p class="post-meta">By <span class="author">Aarav Sharma</span> &bull; September 28, 2025</p>
+                    <h2 class="post-title">The 10 Best Pizza Places in Patna</h2>
+                    <p class="post-excerpt">
+                        The pizza scene in Patna is buzzing! From classic wood-fired margheritas to cheesy desi-style creations, the city offers a slice for every palate. We've tasted our way through town to bring you the definitive list of pizzerias you absolutely must try. Get ready for a flavor journey.
+                    </p>
+                    <a href="#" class="read-more-btn">Read Full Story &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-post-card">
+                <img src="https://placehold.co/900x500/111827/white?text=Boring+Road+Eats" alt="A bustling street food scene at night" class="blog-post-image">
+                <div class="blog-post-content">
+                    <p class="post-meta">By <span class="author">Priya Singh</span> &bull; September 22, 2025</p>
+                    <h2 class="post-title">A Food Lover's Guide to Boring Road</h2>
+                    <p class="post-excerpt">
+                        Don't let the name fool you—Boring Road is anything but! It's the pulsating heart of Patna's culinary world. Join us on a virtual food walk as we explore everything from iconic street food stalls serving spicy chaat to chic cafes perfect for a quiet evening. This is your ultimate guide to eating your way through Patna's most famous lane.
+                    </p>
+                    <a href="#" class="read-more-btn">Explore the Guide &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-post-card">
+                <img src="https://placehold.co/900x500/4d7c0f/white?text=Litti+Chokha" alt="Authentic Litti Chokha served traditionally" class="blog-post-image">
+                <div class="blog-post-content">
+                    <p class="post-meta">By <span class="author">Rohan Kumar</span> &bull; September 15, 2025</p>
+                    <h2 class="post-title">Why Litti Chokha is More Than Just Food</h2>
+                    <p class="post-excerpt">
+                        For anyone from Bihar, Litti Chokha isn't just a dish; it's a feeling. It’s the taste of home, festivals, and winter evenings. We dive deep into the history and cultural soul of this iconic Bihari delicacy. Discover the story behind the spicy sattu filling and the smoky, flavorful chokha that accompanies it.
+                    </p>
+                    <a href="#" class="read-more-btn">Discover the Story &rarr;</a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- You can copy and paste the footer code from your other file here to complete the page -->
+
+</body>
+</html>
