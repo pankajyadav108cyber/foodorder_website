@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tandoor-e-Yadav Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D1B2A;
+            color: #E0E1DD;
+        }
+        .main-header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .header-nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-logo {
+            font-size: 1.5rem; 
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: #111827; 
+            text-decoration: none;
+        }
+        .header-logo:hover{
+            color:#f97316 ;
+        }
+        .header-logo .fa-utensils {
+            margin-right: 0.75rem; 
+            color: #f97316;
+        }
+        .header-link {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4b5563; 
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .header-link:hover {
+            color: #f97316; 
+        }
+        .blog-container {
+            max-width: 900px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        .blog-header h1 {
+            font-size: 2.25rem; 
+            font-weight: 700;
+            color: #f59e0b;
+            text-align: center;
+        }
+        .blog-header p {
+            font-size: 1.125rem; 
+            color: #fafafa; 
+            text-align: center;
+            margin-top: 0.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .blog-posts-grid {
+            margin-top: 3rem; 
+            display: grid;
+            gap: 2.5rem; 
+        }
+        .blog-post-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s forwards;
+        }
+        .blog-post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .blog-post-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+        .blog-post-content {
+            padding: 1.5rem; 
+        }
+        .post-meta {
+            font-size: 0.875rem; 
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        .post-meta .author {
+            font-weight: 600; 
+            color: #f97316;
+        }
+        .post-title {
+            font-size: 1.5rem; 
+            font-weight: 700;
+            color: #1f2937; 
+            margin-bottom: 0.75rem; 
+        }
+        .post-excerpt {
+            color: #4b5563; 
+            line-height: 1.6;
+            margin-bottom: 1.25rem; 
+        }
+        .read-more-btn {
+            display: inline-block;
+            font-weight: 600; 
+            color: #f97316;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .read-more-btn:hover {
+            color: #ea580c; 
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 27, 42, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .modal-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-container {
+            background: white;
+            color: #1f2937;
+            border-radius: 0.75rem;
+            max-width: 700px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.95);
+            transition: transform 0.3s;
+        }
+        .modal-overlay.visible .modal-container {
+            transform: scale(1);
+        }
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: white;
+        }
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            cursor: pointer;
+            color: #6b7280;
+        }
+        .modal-close-btn:hover {
+            color: #1f2937;
+        }
+        .modal-content-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .modal-body {
+            padding: 1.5rem;
+            line-height: 1.7;
+        }
+        .modal-body p {
+            margin-bottom: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="header-nav">
+            <a href="#" class="header-logo">
+                <i class="fas fa-utensils"></i> Tandoor-e-Yadav
+            </a>
+            <a href="index.html" class="header-link">Back to Main Site</a>
+        </nav>
+    </header>
+
+    <main class="blog-container">
+        <header class="blog-header">
+            <h1>Tandoor-e-Yadav</h1>
+            <p>Your daily serving of food stories, restaurant spotlights, and culinary adventures from the heart of Patna.</p>
+        </header>
+        <div class="blog-posts-grid" id="blogPostsGrid"></div>
+    </main>
+    <div class="modal-overlay" id="blogModal">
+        <div class="modal-container">
+            <header class="modal-header">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+            </header>
+            <img src="" alt="" class="modal-content-image" id="modalImage">
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogPosts = [
+                {
+                    image: "pizza.jpg",
+                    alt: "A delicious pizza on a wooden board",
+                    author: "Aarav Sharma",
+                    date: "2025-09-28",
+                    title: "The 10 Best Pizza Places in Patna",
+                    excerpt: "The pizza scene in Patna is buzzing! From classic wood-fired margheritas to cheesy desi-style creations, the city offers a slice for every palate. We've tasted our way through town...",
+                    fullContent: `
+                        <p>The pizza scene in Patna is buzzing! From classic wood-fired margheritas to cheesy desi-style creations, the city offers a slice for every palate. We've tasted our way through town to bring you the definitive list of pizzerias you absolutely must try. Get ready for a flavor journey.</p>
+                        <p>Our number one spot goes to 'Patliputra Pies' for their authentic sourdough crust. Coming in a close second is 'Ganga Ghat Pizzeria', which offers a stunning view with every slice. We also explore budget-friendly options that don't compromise on taste. Whether you're a thin-crust enthusiast or a deep-dish devotee, this guide has something for you.</p>
+                    `
+                },
+                {
+                    image: "burger.jpg",
+                    alt: "A bustling street food scene at night",
+                    author: "Priya Singh",
+                    date: "2025-09-22",
+                    title: "A Food Lover's Guide to Boring Road",
+                    excerpt: "Don't let the name fool you—Boring Road is anything but! It's the pulsating heart of Patna's culinary world. Join us on a virtual food walk as we explore everything from iconic street food stalls...",
+                    fullContent: `
+                        <p>Don't let the name fool you—Boring Road is anything but! It's the pulsating heart of Patna's culinary world. Join us on a virtual food walk as we explore everything from iconic street food stalls serving spicy chaat to chic cafes perfect for a quiet evening. This is your ultimate guide to eating your way through Patna's most famous lane.</p>
+                        <p>We start our journey at the legendary 'Gupta Chaat Bhandar', a must-visit for anyone craving authentic golgappas. Further down the road, 'The Melting Pot' cafe offers a serene escape with its artisanal coffees and desserts. We'll also uncover hidden gems that only the locals know about, ensuring you get a true taste of Patna.</p>
+                    `
+                },
+                {
+                    image:"litti.jpg",
+                    alt: "Authentic Litti Chokha served traditionally",
+                    author: "Rohan Kumar",
+                    date: "2025-09-15",
+                    title: "Why Litti Chokha is More Than Just Food",
+                    excerpt: "For anyone from Bihar, Litti Chokha isn't just a dish; it's a feeling. It’s the taste of home, festivals, and winter evenings. We dive deep into the history and cultural soul of this iconic Bihari delicacy...",
+                    fullContent: `
+                        <p>For anyone from Bihar, Litti Chokha isn't just a dish; it's a feeling. It’s the taste of home, festivals, and winter evenings. We dive deep into the history and cultural soul of this iconic Bihari delicacy. Discover the story behind the spicy sattu filling and the smoky, flavorful chokha that accompanies it.</p>
+                        <p>The origins of Litti Chokha can be traced back to the ancient Magadhan kingdom. It was a staple for travelers and warriors due to its long shelf life and the simple ingredients required. Today, it stands as a proud symbol of Bihari cuisine, a rustic yet complex dish that tells a story of the land and its people with every bite.</p>
+                    `
+                }
+            ];
+            const blogPostsGrid = document.getElementById('blogPostsGrid');
+            const modal = document.getElementById('blogModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalImage = document.getElementById('modalImage');
+            const modalBody = document.getElementById('modalBody');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+            
+          
+            
+            /**
+             * Calculates the difference in days between a given date and today.
+             * @param {string} dateString - The date of the post (YYYY-MM-DD).
+             * @returns {string} - A user-friendly string like "Published 3 days ago".
+             */
+            function timeAgo(dateString) {
+                const today = new Date("2025-10-01T16:04:00");
+                const postDate = new Date(dateString);
+                const diffTime = Math.abs(today - postDate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+                if (diffDays === 1) return `Published yesterday`;
+                if (diffDays <= 0) return `Published today`;
+                return `Published ${diffDays} days ago`;
+            }
+            function displayBlogPosts() {
+                blogPostsGrid.innerHTML = blogPosts.map((post, index) => `
+                    <article class="blog-post-card" style="animation-delay: ${index * 100}ms;">
+                        <img src="${post.image}" alt="${post.alt}" class="blog-post-image">
+                        <div class="blog-post-content">
+                            <p class="post-meta">By <span class="author">${post.author}</span> &bull; ${timeAgo(post.date)}</p>
+                            <h2 class="post-title">${post.title}</h2>
+                            <p class="post-excerpt">${post.excerpt}</p>
+                            <a class="read-more-btn" data-index="${index}">Read Full Story &rarr;</a>
+                        </div>
+                    </article>
+                `).join('');
+            }
+            
+            /**
+             * Opens the modal with content from a specific post.
+             * @param {number} index - The index of the post in the blogPosts array.
+             */
+            function openModal(index) {
+                const post = blogPosts[index];
+                modalTitle.textContent = post.title;
+                modalImage.src = post.image;
+                modalImage.alt = post.alt;
+                modalBody.innerHTML = post.fullContent;
+                modal.classList.add('visible');
+                document.body.style.overflow = 'hidden'; 
+            }
+            function closeModal() {
+                modal.classList.remove('visible');
+                document.body.style.overflow = ''; 
+            }
+            blogPostsGrid.addEventListener('click', (e) => {
+                if (e.target.classList.contains('read-more-btn')) {
+                    const index = e.target.dataset.index;
+                    openModal(index);
+                }
+            });
+            modalCloseBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('visible')) {
+                    closeModal();
+                }
+            });
+            displayBlogPosts();
+        });
+    </script>
+</body>
+</html>
